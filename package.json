@@ -1,0 +1,30 @@
+{
+  "name": "webhandle-indexer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha",
+    "testDebug": "node_modules/mocha/bin/mocha --inspect --debug-brk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmergentIdeas/webhandle-indexer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmergentIdeas/webhandle-indexer/issues"
+  },
+  "homepage": "https://github.com/EmergentIdeas/webhandle-indexer#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "commingle": "0.0.4",
+    "file-sink": "^1.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}
