@@ -37,6 +37,8 @@ class IndexerManager {
 		let findFunctions = []
 		let fullPartialMappings = {}
 		
+		let newIndexer = new Indexer()
+		
 		this.getSearchFilePaths().forEach(p => {
 			
 			this.extensions.forEach(e => {
@@ -68,7 +70,7 @@ class IndexerManager {
 				
 				if(str && exor) {
 					exor(str, (err, content) => {
-						self.indexer.indexDocument(fullPartialMappings[cur] , content)
+						newIndexer.indexDocument(fullPartialMappings[cur] , content)
 						extractor()
 					})
 				}
@@ -77,6 +79,7 @@ class IndexerManager {
 				}
 			}
 			else {
+				self.indexer = newIndexer
 				if(callback) {
 					callback(null, this)
 				}

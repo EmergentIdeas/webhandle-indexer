@@ -6,10 +6,6 @@ const extensionFileFinder = require('../lib/extension-file-finder')
 
 describe("basic tests for functionality", function() {
 	it("simplest whole test", function(done) {
-		let a = {}
-		let b = {}
-	
-	
 		let IndexerManager = require('../indexer-manager')
 	
 		let parentPath = Path.resolve('.')

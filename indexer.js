@@ -1,5 +1,6 @@
 const BiDiMap = require('./lib/bidimap')
 const _ = require('underscore')
+const fs = require('fs')
 
 let allowedCharMap = Array.from('abcdefghijklmnopqrstuvwxyz1234567890 ').reduce((acc, cur) => {
 	acc[cur] = cur
@@ -20,7 +21,7 @@ class Indexer {
 	}
 	
 	loadFromFile(indexFileName, callback) {
-		fs.readFile(serializedIndexName, (err, data) => {
+		fs.readFile(indexFileName, (err, data) => {
 			if(err) {
 				console.log(err)
 				if(callback) {
