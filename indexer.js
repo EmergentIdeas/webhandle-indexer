@@ -111,7 +111,9 @@ class Indexer {
 				}
 			}
 		}
-		
+		if(!docNums) {
+			docNums = []
+		}
 		for(let word of words) {
 			word = word.trim()
 			if(word) {
