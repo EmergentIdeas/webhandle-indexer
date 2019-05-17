@@ -6,6 +6,7 @@ const path = require('path')
 const extensionFileFinder = require('./lib/extension-file-finder')
 const commingle = require('commingle')
 const triExtractor = require('./lib/tripartite-content-extractor')
+const jsonExtractor = require('./lib/json-content-extractor')
 
 /*
 	options: {
@@ -23,7 +24,7 @@ class IndexerManager {
 		options = options || {}
 		
 		this.fileRoots = options.fileRoots || ['pages']
-		this.extensions = options.extensions || ['tri']
+		this.extensions = options.extensions || ['tri', 'json']
 		this.projectRoot = options.projectRoot
 		this.indexer = options.indexer || new Indexer()
 		this.indexLocation = options.indexLocation || 'page-index.json'
@@ -66,6 +67,10 @@ class IndexerManager {
 				if(cur.endsWith('.tri')) {
 					str = fs.createReadStream(cur)
 					exor = triExtractor
+				}
+				if(cur.endsWith('.json')) {
+					str = fs.createReadStream(cur)
+					exor = jsonExtractor
 				}
 				
 				if(str && exor) {
